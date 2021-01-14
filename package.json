@@ -1,6 +1,6 @@
 {
   "name": "fancy-card-formatter",
-  "version": "0.0.3",
+  "version": "0.0.3-b",
   "description": "Fancy payment card formatter written in TypeScript. Includes a React hook.",
   "repository": {
     "type": "git",
