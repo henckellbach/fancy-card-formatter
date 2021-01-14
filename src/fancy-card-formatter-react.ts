@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FancyCardFormatter from './fancy-card-formatter';
+import FancyCardFormatter, { sanitizeValue } from './fancy-card-formatter';
 
 export default function useFancyCardFormatter(initialValue = '') {
   const [formatter] = useState(new FancyCardFormatter(initialValue));
@@ -13,3 +13,5 @@ export default function useFancyCardFormatter(initialValue = '') {
 
   return [stateValue, setValue] as const;
 }
+
+export { sanitizeValue };

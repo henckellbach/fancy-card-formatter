@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.sanitizeValue = void 0;
 var formatStandardCard = function (value) { return value.replace(/(\d{4})/g, '$1 '); };
 var formatAmex = function (value) {
     return value.replace(/^(\d{4})/, '$1 ').replace(/\W(\d{6})/, ' $1 ');
 };
-var sanitize = function (value) { return value.replace(/[^\d]/gi, ''); };
+var sanitizeValue = function (value) { return value.replace(/[^\d]/gi, ''); };
+exports.sanitizeValue = sanitizeValue;
 var FancyCardFormatter = /** @class */ (function () {
     function FancyCardFormatter(value) {
         if (value === void 0) { value = ''; }
@@ -13,8 +15,11 @@ var FancyCardFormatter = /** @class */ (function () {
     FancyCardFormatter.prototype.getValue = function () {
         return this.value;
     };
+    FancyCardFormatter.prototype.getRawValue = function () {
+        return exports.sanitizeValue(this.value);
+    };
     FancyCardFormatter.prototype.setValue = function (newValue) {
-        var newValueRaw = sanitize(newValue);
+        var newValueRaw = exports.sanitizeValue(newValue);
         var finalValue = newValue;
         var isAmex = newValueRaw.startsWith('37') || newValueRaw.startsWith('34');
         // enable backspace

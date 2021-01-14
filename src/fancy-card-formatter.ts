@@ -4,7 +4,7 @@ const formatStandardCard: Formatter = value => value.replace(/(\d{4})/g, '$1 ');
 const formatAmex: Formatter = value =>
   value.replace(/^(\d{4})/, '$1 ').replace(/\W(\d{6})/, ' $1 ');
 
-const sanitize: Formatter = value => value.replace(/[^\d]/gi, '');
+export const sanitizeValue: Formatter = value => value.replace(/[^\d]/gi, '');
 
 class FancyCardFormatter {
   private oldValue: string;
@@ -18,8 +18,12 @@ class FancyCardFormatter {
     return this.value;
   }
 
+  getRawValue() {
+    return sanitizeValue(this.value);
+  }
+
   setValue(newValue: string) {
-    const newValueRaw = sanitize(newValue);
+    const newValueRaw = sanitizeValue(newValue);
     let finalValue = newValue;
 
     const isAmex = newValueRaw.startsWith('37') || newValueRaw.startsWith('34');
