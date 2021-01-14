@@ -29,8 +29,6 @@ class FancyCardFormatter {
       const maxLength = isAmex ? 15 : 16;
       const format = isAmex ? formatAmex : formatStandardCard;
 
-      console.log(this);
-
       // enforce maxLength
       if (newValueRaw.length > maxLength) {
         return this.value;
