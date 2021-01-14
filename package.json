@@ -1,0 +1,25 @@
+{
+  "name": "fancy-card-formatter",
+  "version": "0.0.1",
+  "description": "Fancy payment card formatter written in TypeScript. Includes a React hook.",
+  "main": "./dist/fancy-card-formatter.js",
+  "typings": "./dist/fancy-card-formatter.d.ts",
+  "scripts": {
+    "build": "tsc -d",
+    "lint": "eslint --ext js,ts ."
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "author": "Filip Novotný <filip@novotny.je>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.1"
+  }
+}

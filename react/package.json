@@ -1,0 +1,6 @@
+{
+  "name": "fancy-card-formatter/react",
+  "private": true,
+  "main": "../dist/fancy-card-formatter-react.js",
+  "typings": "../dist/fancy-card-formatter-react.d.ts"
+}
